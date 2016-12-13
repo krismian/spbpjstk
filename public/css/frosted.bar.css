@@ -1,0 +1,59 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+}
+
+
+.overlayViewport {
+    position: fixed;
+    background: white;
+    height: 110px;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+@media (max-width: 768px) {
+    .overlayViewport {
+        height: 70px;
+    }
+}
+
+.contentViewport {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 70px; /* compensate for 1px border */
+}
+
+.overlayViewport,
+.contentViewport {
+    overflow: hidden;
+}
+
+.overlayViewport .content-wrapper {
+    overflow: hidden;
+}
+
+
+.overlayViewport .content {
+    opacity: 0.9;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+    .overlayContent {
+        height: 30px;
+    }
+}
+
+.overlayContent {
+    height: 100px;
+    bottom: 0;
+    position: fixed;
+}
